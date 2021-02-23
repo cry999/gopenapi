@@ -1,0 +1,11 @@
+{
+    "go.inferGopath": false,
+    "go.addTags": {
+        // "tags": "json,yaml",
+        "tags": "yaml",
+        // "options": "json=omitempty,yaml=omitempty",
+        "options": "yaml=inline",
+        "transform": "camelcase",
+        "promptForTags": false,
+    }
+}
