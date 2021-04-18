@@ -110,15 +110,15 @@ func loadPathItem(cwd, root string, paths Paths) error {
 }
 
 func loadPathItemOperations(cwd string, item *PathItem) error {
-	for filename, op := range map[string]*Operation{
-		"get.yml":     item.Get,
-		"put.yml":     item.Put,
-		"post.yml":    item.Post,
-		"delete.yml":  item.Delete,
-		"options.yml": item.Options,
-		"head.yml":    item.Head,
-		"patch.yml":   item.Patch,
-		"trace.yml":   item.Trace,
+	for filename, op := range map[string]**Operation{
+		"get.yml":     &item.Get,
+		"put.yml":     &item.Put,
+		"post.yml":    &item.Post,
+		"delete.yml":  &item.Delete,
+		"options.yml": &item.Options,
+		"head.yml":    &item.Head,
+		"patch.yml":   &item.Patch,
+		"trace.yml":   &item.Trace,
 	} {
 		filename = filepath.Join(cwd, filename)
 		if _, err := os.Stat(filename); err != nil && !os.IsExist(err) {
