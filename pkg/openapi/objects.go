@@ -184,6 +184,8 @@ type Reference struct {
 type Schema struct {
 	Type       string                  `json:"type,omitempty" yaml:"type,omitempty"`
 	Format     string                  `json:"format,omitempty" yaml:"format,omitempty"`
+	Example    string                  `json:"example,omitempty" yaml:"example,omitempty"`
+	Enum       []string                `json:"enum,omitempty" yaml:"enum,omitempty"`
 	Properties map[string]*SchemaOrRef `json:"properties,omitempty" yaml:"properties,omitempty"`
 	Items      *SchemaOrRef            `json:"items,omitempty" yaml:"items,omitempty"`
 }
